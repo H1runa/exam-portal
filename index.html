@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>About Us</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="index.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+</head>
+<body>    
+    <!-- Hero Section -->
+    <header class="hero position-relative">
+        <div class="hero-content">
+            <h1>Welcome</h1>
+            <p>We warmly welcome you to [Website name here], go-to web platform for responsive academic calculations and exam results tracking. We Believe in making
+                your academic life easier by providing reliable, quick and hassle-free services. Join us today and make your academic progress easier than ever. 
+            </p>
+            <div id="loginregister" class="position-absolute end-0 top-0 m-4">
+                <a href="register.html" class="btn m-1 btn-info"> <strong>Register</strong></a>
+                <a href="login.html" class="btn m-1 btn-info"><strong>Login</strong></a>
+            </div>    
+            <div id="gt_dashboard" class="position-absolute end-0 top-0 m-4">
+                <a href="dashboard.html" class="btn m-1 btn-info"> <strong>Dashboard</strong></a>                
+            </div>            
+            <a href="#about" class="btn btn-warning  ms-4"><strong>Learn More</strong></a>
+            <a href="manual_calc.html" class="btn btn-info"><strong>Calculate your GPA</strong></a>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>What we offer </h2>
+            <p> We offer tools to help students manage their exam results and grades efficiently. <br><br>
+                <center><b><u>For Everyone - No Registration Needed</u> </b></center><br>
+                    Need a quick GPA calculation? use our manual GPA calculator without signing up.<br><br>
+                <center><b><u> For Registered Users - Unlock more services </u></b></center><br>
+                Create a free account to access automated services that save your time, including:<br><br>
+                <center> Automatic GPA Calculation</center><br>
+                <center>Exam Results Checking </center> 
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contactSection" class="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <h3>Email</h3>
+                    <p><a href="mailto:info@example.com">info@example.com</a></p>
+                </div>
+                <div class="contact-item">
+                    <h3>Contact Number</h3>
+                    <p><a href="tel:1234567890">1234567890</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer" class="bg-dark text-light">
+        <p>&copy; 2025 All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Navigation
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+</body>
+</html>

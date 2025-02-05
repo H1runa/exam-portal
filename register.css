@@ -1,0 +1,18 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: rgb(156, 152, 152) ;
+}
+form{
+    box-shadow: 2px 6px 100px #ffffff;
+}
+
+.responsive-width {
+    width: 75%; /* Default: 50% width on small screens */
+    margin: 0 auto; /* Center it */
+    max-width: 600px;
+}

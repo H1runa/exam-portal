@@ -1,0 +1,62 @@
+body {
+    background-color: aliceblue;
+}
+
+header{
+    background: linear-gradient(to right, #1c3972, #74aee8);
+    color: white;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+#examResults, #gpaBox, #gpaCalculation, #userInfo {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.5s ease;
+    background-color: white;
+    user-select: none;
+}
+
+#gpaBox:hover, #gpaCalculation:hover {
+    transform: scale(1.1); 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); 
+    background-color: #74aee8; 
+}
+#examResults:hover{
+    transform: scale(1.1); 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); 
+    background-color: #e36c52; 
+}
+#userInfo:hover{
+    transform: scale(1.1); 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); 
+    background-color: #64e79a; 
+}
+
+.gradient-nibm-color{
+    background: linear-gradient(to right, #1c3972, #74aee8);
+}
+.nibm-color{
+    background-color: #1c3972;
+}
+
+#deleteBtn{
+    background-color: #dc3545;
+}
+#deleteBtn:hover{
+    background-color: darkred;
+}
+#updateBtn, #logoutBtn{
+    background-color: rgb(71, 123, 174);
+}
+#updateBtn:hover, #logoutBtn:hover{
+    background-color: #1c3972;
+}
+.offcanvas-body{
+    background-color: aliceblue;
+}
+.offcanvas-header{
+    background-color: #1c3972;
+}
+footer{
+    background-color: #1c3972;
+    color: white;
+}

@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NIBM GPA Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="manual_calc.css">
+    <script src="manual_calc.js"></script>
+</head>
+<body>
+    <header class="mt-3 position-relative">        
+        <h1 class="text-center display-4 text-muted"><strong>GPA Calculator for </strong><span id="nibmlogo" class="fw-bold"><em>NIBM</em></span></h1>
+        <button class="btn btn-primary d-flex align-items-center justify-content-center position-absolute top-0 end-0 mx-md-3 mb-2" id="infoBtn" style="width: 30px; height: 30px;">
+            <i class="bi bi-exclamation-square fs-1"></i>
+        </button>
+        <div class="position-fixed top-0 end-0 p-3" style="z-index: 11">
+            <div id="infoToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
+              <div class="toast-header">                
+                <strong class="me-auto">Please note that this was made for DSE24.1F batch. It may not work for other batches.</strong>                
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+              </div>              
+            </div>
+          </div>
+        
+    </header>
+    <main class="border border-light m-3 p-2">
+        <div class="row">
+            <div class="col-xl-8">
+                <div class="container mt-4" id="grades-container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="container d-flex justify-content-md-end justify-content-center">
+                                <div class="mb-3">
+                                    <label class="form-label">Introduction to Computer Science</label>
+                                    <div class="input-group" id="ics-group">
+                                        <input type="radio" class="btn-check" name="ics" id="ics0" autocomplete="off" checked>
+                                        <label class="btn btn-outline-secondary" for="ics0">None</label>
+                        
+                                        <input type="radio" class="btn-check" name="ics" id="ics1" autocomplete="off">
+                                        <label class="btn btn-outline-secondary" for="ics1">A+/A</label>
+                        
+                                        <input type="radio" class="btn-check" name="ics" id="ics1a" autocomplete="off">
+                                        <label class="btn btn-outline-secondary" for="ics1a">A-</label>
+                        
+                                        <input type="radio" class="btn-check" name="ics" id="ics2" autocomplete="off">
+                                        <label class="btn btn-outline-secondary" for="ics2">B+</label>        
+                        
+                                        <input type="radio" class="btn-check" name="ics" id="ics3" autocomplete="off">
+                                        <label class="btn btn-outline-secondary" for="ics3">B or below</label>
+                                    </div>
+                                </div>   
+                            </div>
+                            <div class="container d-flex justify-content-md-end justify-content-center">
+                                <div class="mb-3">
+                                    <label class="form-label">Mathematics for Computing</label>
+                                    <div class="input-group">
+                                        <input type="radio" class="btn-check" name="mc" id="mc0" autocomplete="off" checked>
+                                        <label class="btn btn-outline-secondary" for="mc0">None</label>
+                        
+                                        <input type="radio" class="btn-check" name="mc" id="mc1" autocomplete="off">
+                                        <label class="btn btn-outline-secondary" for="mc1">A+/A</label>
+                        
+                                        <input type="radio" class="btn-check" name="mc" id="mc1a" autocomplete="off">
+                                        <label class="btn btn-outline-secondary" for="mc1a">A-</label>
+                        
+                                        <input type="radio" class="btn-check" name="mc" id="mc2" autocomplete="off">
+                                        <label class="btn btn-outline-secondary" for="mc2">B+</label>        
+                        
+                                        <input type="radio" class="btn-check" name="mc" id="mc3" autocomplete="off">
+                                        <label class="btn btn-outline-secondary" for="mc3">B or below</label>
+                                    </div>
+                                </div>  
+                            </div>
+                            <div class="container d-flex justify-content-md-end justify-content-center">
+                                <div class="mb-3">
+                                    <label class="form-label">Algorithms and Programming Fundamentals</label>
+                                    <div class="input-group">
+                                        <input type="radio" class="btn-check" name="apf" id="apf0" autocomplete="off" checked>
+                                        <label class="btn btn-outline-secondary" for="apf0">None</label>
+                                
+                                        <input type="radio" class="btn-check" name="apf" id="apf1" autocomplete="off">
+                                        <label class="btn btn-outline-secondary" for="apf1">A+/A</label>
+                                
+                                        <input type="radio" class="btn-check" name="apf" id="apf1a" autocomplete="off">
+                                        <label class="btn btn-outline-secondary" for="apf1a">A-</label>
+                                
+                                        <input type="radio" class="btn-check" name="apf" id="apf2" autocomplete="off">
+                                        <label class="btn btn-outline-secondary" for="apf2">B+</label>        
+                                
+                                        <input type="radio" class="btn-check" name="apf" id="apf3" autocomplete="off">
+                                        <label class="btn btn-outline-secondary" for="apf3">B or below</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container d-flex justify-content-md-end justify-content-center">
+                                <div class="mb-3">
+                                    <label class="form-label">Digital Logic and Computer Organization</label>
+                                    <div class="input-group">
+                                        <input type="radio" class="btn-check" name="dlc" id="dlc0" autocomplete="off" checked>
+                                        <label class="btn btn-outline-secondary" for="dlc0">None</label>
+                        
+                                        <input type="radio" class="btn-check" name="dlc" id="dlc1" autocomplete="off">
+                                        <label class="btn btn-outline-secondary" for="dlc1">A+/A</label>
+                        
+                                        <input type="radio" class="btn-check" name="dlc" id="dlc1a" autocomplete="off">
+                                        <label class="btn btn-outline-secondary" for="dlc1a">A-</label>
+                        
+                                        <input type="radio" class="btn-check" name="dlc" id="dlc2" autocomplete="off">
+                                        <label class="btn btn-outline-secondary" for="dlc2">B+</label>        
+                        
+                                        <input type="radio" class="btn-check" name="dlc" id="dlc3" autocomplete="off">
+                                        <label class="btn btn-outline-secondary" for="dlc3">B or below</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container d-flex justify-content-md-end justify-content-center">
+                                <div class="mb-3">
+                                    <label class="form-label">Object Oriented Programming</label>
+                                    <div class="input-group">
+                                        <input type="radio" class="btn-check" name="oop" id="oop0" autocomplete="off" checked>
+                                        <label class="btn btn-outline-secondary" for="oop0">None</label>
+                        
+                                        <input type="radio" class="btn-check" name="oop" id="oop1" autocomplete="off">
+                                        <label class="btn btn-outline-secondary" for="oop1">A+/A</label>
+                        
+                                        <input type="radio" class="btn-check" name="oop" id="oop1a" autocomplete="off">
+                                        <label class="btn btn-outline-secondary" for="oop1a">A-</label>
+                        
+                                        <input type="radio" class="btn-check" name="oop" id="oop2" autocomplete="off">
+                                        <label class="btn btn-outline-secondary" for="oop2">B+</label>        
+                        
+                                        <input type="radio" class="btn-check" name="oop" id="oop3" autocomplete="off">
+                                        <label class="btn btn-outline-secondary" for="oop3">B or below</label>
+                                    </div>
+                                </div>
+                            </div>                                                        
+                            <div class="container d-flex justify-content-md-end justify-content-center">
+                                <div class="mb-3">
+                                    <label class="form-label">Data Management</label>
+                                    <div class="input-group">
+                                        <input type="radio" class="btn-check" name="dm" id="dm0" autocomplete="off" checked>
+                                        <label class="btn btn-outline-secondary" for="dm0">None</label>
+                                
+                                        <input type="radio" class="btn-check" name="dm" id="dm1" autocomplete="off">
+                                        <label class="btn btn-outline-secondary" for="dm1">A+/A</label>
+                                
+                                        <input type="radio" class="btn-check" name="dm" id="dm1a" autocomplete="off">
+                                        <label class="btn btn-outline-secondary" for="dm1a">A-</label>
+                                
+                                        <input type="radio" class="btn-check" name="dm" id="dm2" autocomplete="off">
+                                        <label class="btn btn-outline-secondary" for="dm2">B+</label>        
+                                
+                                        <input type="radio" class="btn-check" name="dm" id="dm3" autocomplete="off">
+                                        <label class="btn btn-outline-secondary" for="dm3">B or below</label>
+                                    </div>
+                                </div>
+                            </div>  
+                            <div class="container d-flex justify-content-md-end justify-content-center">
+                                <div class="mb-3">
+                                    <label class="form-label">Computer Networks</label>
+                                    <div class="input-group">
+                                        <input type="radio" class="btn-check" name="cn" id="cn0" autocomplete="off" checked>
+                                        <label class="btn btn-outline-secondary" for="cn0">None</label>
+                                
+                                        <input type="radio" class="btn-check" name="cn" id="cn1" autocomplete="off">
+                                        <label class="btn btn-outline-secondary" for="cn1">A+/A</label>
+                                
+                                        <input type="radio" class="btn-check" name="cn" id="cn1a" autocomplete="off">
+                                        <label class="btn btn-outline-secondary" for="cn1a">A-</label>
+                                
+                                        <input type="radio" class="btn-check" name="cn" id="cn2" autocomplete="off">
+                                        <label class="btn btn-outline-secondary" for="cn2">B+</label>        
+                                
+                                        <input type="radio" class="btn-check" name="cn" id="cn3" autocomplete="off">
+                                        <label class="btn btn-outline-secondary" for="cn3">B or below</label>
+                                    </div>
+                                </div>
+                            </div>                                                                                                                                                      
+                        </div>
+                        <div class="col-md-6">                
+                            <div class="container d-flex justify-content-md-start justify-content-center">
+                                <div class="mb-3">
+                                    <label class="form-label">GUI Development</label>
+                                    <div class="input-group">
+                                        <input type="radio" class="btn-check" name="gui" id="gui0" autocomplete="off" checked>
+                                        <label class="btn btn-outline-secondary" for="gui0">None</label>
+                                
+                                        <input type="radio" class="btn-check" name="gui" id="gui1" autocomplete="off">
+                                        <label class="btn btn-outline-secondary" for="gui1">A+/A</label>
+                                
+                                        <input type="radio" class="btn-check" name="gui" id="gui1a" autocomplete="off">
+                                        <label class="btn btn-outline-secondary" for="gui1a">A-</label>
+                                
+                                        <input type="radio" class="btn-check" name="gui" id="gui2" autocomplete="off">
+                                        <label class="btn btn-outline-secondary" for="gui2">B+</label>        
+                                
+                                        <input type="radio" class="btn-check" name="gui" id="gui3" autocomplete="off">
+                                        <label class="btn btn-outline-secondary" for="gui3">B or below</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container d-flex justify-content-md-start justify-content-center">
+                                <div class="mb-3">
+                                    <label class="form-label">Software Engineering</label>
+                                    <div class="input-group">
+                                        <input type="radio" class="btn-check" name="se" id="se0" autocomplete="off" checked>
+                                        <label class="btn btn-outline-secondary" for="se0">None</label>
+                                
+                                        <input type="radio" class="btn-check" name="se" id="se1" autocomplete="off">
+                                        <label class="btn btn-outline-secondary" for="se1">A+/A</label>
+                                
+                                        <input type="radio" class="btn-check" name="se" id="se1a" autocomplete="off">
+                                        <label class="btn btn-outline-secondary" for="se1a">A-</label>
+                                
+                                        <input type="radio" class="btn-check" name="se" id="se2" autocomplete="off">
+                                        <label class="btn btn-outline-secondary" for="se2">B+</label>        
+                                
+                                        <input type="radio" class="btn-check" name="se" id="se3" autocomplete="off">
+                                        <label class="btn btn-outline-secondary" for="se3">B or below</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container d-flex justify-content-md-start justify-content-center">
+                                <div class="mb-3">
+                                    <label class="form-label">Enterprise Application Development</label>
+                                    <div class="input-group">
+                                        <input type="radio" class="btn-check" name="ead" id="ead0" autocomplete="off" checked>
+                                        <label class="btn btn-outline-secondary" for="ead0">None</label>
+                                
+                                        <input type="radio" class="btn-check" name="ead" id="ead1" autocomplete="off">
+                                        <label class="btn btn-outline-secondary" for="ead1">A+/A</label>
+                                
+                                        <input type="radio" class="btn-check" name="ead" id="ead1a" autocomplete="off">
+                                        <label class="btn btn-outline-secondary" for="ead1a">A-</label>
+                                
+                                        <input type="radio" class="btn-check" name="ead" id="ead2" autocomplete="off">
+                                        <label class="btn btn-outline-secondary" for="ead2">B+</label>        
+                                
+                                        <input type="radio" class="btn-check" name="ead" id="ead3" autocomplete="off">
+                                        <label class="btn btn-outline-secondary" for="ead3">B or below</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container d-flex justify-content-md-start justify-content-center">
+                                <div class="mb-3">
+                                    <label class="form-label">Developing Modern Web</label>
+                                    <div class="input-group">
+                                        <input type="radio" class="btn-check" name="dmw" id="dmw0" autocomplete="off" checked>
+                                        <label class="btn btn-outline-secondary" for="dmw0">None</label>
+                                
+                                        <input type="radio" class="btn-check" name="dmw" id="dmw1" autocomplete="off">
+                                        <label class="btn btn-outline-secondary" for="dmw1">A+/A</label>
+                                
+                                        <input type="radio" class="btn-check" name="dmw" id="dmw1a" autocomplete="off">
+                                        <label class="btn btn-outline-secondary" for="dmw1a">A-</label>
+                                
+                                        <input type="radio" class="btn-check" name="dmw" id="dmw2" autocomplete="off">
+                                        <label class="btn btn-outline-secondary" for="dmw2">B+</label>        
+                                
+                                        <input type="radio" class="btn-check" name="dmw" id="dmw3" autocomplete="off">
+                                        <label class="btn btn-outline-secondary" for="dmw3">B or below</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container d-flex justify-content-md-start justify-content-center">
+                                <div class="mb-3">
+                                    <label class="form-label">Operating Systems</label>
+                                    <div class="input-group">
+                                        <input type="radio" class="btn-check" name="os" id="os0" autocomplete="off" checked>
+                                        <label class="btn btn-outline-secondary" for="os0">None</label>
+                                
+                                        <input type="radio" class="btn-check" name="os" id="os1" autocomplete="off">
+                                        <label class="btn btn-outline-secondary" for="os1">A+/A</label>
+                                
+                                        <input type="radio" class="btn-check" name="os" id="os1a" autocomplete="off">
+                                        <label class="btn btn-outline-secondary" for="os1a">A-</label>
+                                
+                                        <input type="radio" class="btn-check" name="os" id="os2" autocomplete="off">
+                                        <label class="btn btn-outline-secondary" for="os2">B+</label>        
+                                
+                                        <input type="radio" class="btn-check" name="os" id="os3" autocomplete="off">
+                                        <label class="btn btn-outline-secondary" for="os3">B or below</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container d-flex justify-content-md-start justify-content-center">
+                                <div class="mb-3">
+                                    <label class="form-label">Effective Communication Skills</label>
+                                    <div class="input-group">
+                                        <input type="radio" class="btn-check" name="ecs" id="ecs0" autocomplete="off" checked>
+                                        <label class="btn btn-outline-secondary" for="ecs0">None</label>
+                        
+                                        <input type="radio" class="btn-check" name="ecs" id="ecs1" autocomplete="off">
+                                        <label class="btn btn-outline-secondary" for="ecs1">A+/A</label>
+                        
+                                        <input type="radio" class="btn-check" name="ecs" id="ecs1a" autocomplete="off">
+                                        <label class="btn btn-outline-secondary" for="ecs1a">A-</label>
+                        
+                                        <input type="radio" class="btn-check" name="ecs" id="ecs2" autocomplete="off">
+                                        <label class="btn btn-outline-secondary" for="ecs2">B+</label>        
+                        
+                                        <input type="radio" class="btn-check" name="ecs" id="ecs3" autocomplete="off">
+                                        <label class="btn btn-outline-secondary" for="ecs3">B or below</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container d-flex justify-content-md-start justify-content-center">
+                                <div class="mb-3">
+                                    <label class="form-label">Final Project</label>
+                                    <div class="input-group">
+                                        <input type="radio" class="btn-check" name="final" id="final0" autocomplete="off" checked>
+                                        <label class="btn btn-outline-secondary" for="final0">None</label>
+                        
+                                        <input type="radio" class="btn-check" name="final" id="final1" autocomplete="off">
+                                        <label class="btn btn-outline-secondary" for="final1">A+/A</label>
+                        
+                                        <input type="radio" class="btn-check" name="final" id="final1a" autocomplete="off">
+                                        <label class="btn btn-outline-secondary" for="final1a">A-</label>
+                        
+                                        <input type="radio" class="btn-check" name="final" id="final2" autocomplete="off">
+                                        <label class="btn btn-outline-secondary" for="final2">B+</label>        
+                        
+                                        <input type="radio" class="btn-check" name="final" id="final3" autocomplete="off">
+                                        <label class="btn btn-outline-secondary" for="final3">B or below</label>
+                                    </div>
+                                </div>
+                            </div>                                                                                                                                                                                                                                                       
+                        </div>
+                    </div>        
+                    
+                </div>
+            </div>
+            <div class="col-xl-4 d-flex justify-content-center align-items-center">
+                <div class="container text-xl-start text-center m-4">
+                    <p class="fw-bold fs-1">Your GPA is: <span id="gpavalue">0</span></p>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+        addChangeListeners();
+        document.getElementById("infoBtn").addEventListener('click', function(){
+            var toast = new bootstrap.Toast(document.getElementById("infoToast"));
+            toast.show();
+        })
+    </script>    
+</body>
+</html>
