@@ -1,18 +1,64 @@
-*{
+/* General Reset */
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+  }
+  
+  /* Background for the page */
+  body {
+    background: linear-gradient(90deg, rgba(0, 212, 255, 1) 0%, rgba(75, 14, 154, 1) 35%, rgba(2, 0, 36, 1) 100%);
+  }
+  
+  /* Header styles */
+  header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Form container styling */
+  section.container {
+    background-color: rgba(0, 0, 0, 0.8); /* Dark background for contrast */
+    border-radius: 10px;
+    padding: 20px;
+    color: white; /* Ensures text is visible */
+  }
+  
+  /* Input boxes styling */
+  .form-control {
+    width: 100%; /* Full width of container */
+    max-width: 100%; /* Prevent overflow */
+    margin-bottom: 15px; /* Space between inputs */
+    border-radius: 8px;
+  }
+  
+  /* Button styling */
+  button.btn-primary {
+    width: 90%; /* Full width of the button */
+  }
+  
+  /* Check box alignment */
+  .form-check-label {
+    margin-left: 2px;
+  }
+  
+  /* Form element spacing */
+  .form-group {
+    margin-bottom: 15px; /* Adds spacing between groups */
+  }
+  .form-container {
+    width: 10%; /* Reduce this percentage to make it narrower */
+    max-width: 100px; /* Set a max-width to control its size */
+    margin: 0 auto; /* Center the form */
 }
-
-body{
-    background-color: rgb(156, 152, 152) ;
-}
-form{
-    box-shadow: 2px 6px 100px #ffffff;
-}
-
-.responsive-width {
-    width: 75%; /* Default: 50% width on small screens */
-    margin: 0 auto; /* Center it */
-    max-width: 600px;
+form input, form label {
+    display: block;
+    width: 50%;
+    margin-bottom: 5px;
+    margin-right: 1px;
+    padding: 3px;
+    background: none;
+    color: var(--text-color);
+    box-sizing: border-box;
+    border: none; /* Removed border */
 }

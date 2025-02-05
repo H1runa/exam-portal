@@ -1,4 +1,9 @@
-function validation(){
+document.addEventListener('DOMContentLoaded', function(){    
+    addCustomFormSubmit();
+    
+})
+
+function validation(){    
     let index = document.forms["registerForm"]["txtIndex"].value;
     let email = document.forms["registerForm"]["txtEmail"].value;
     let pswd = document.forms["registerForm"]["txtPswd"].value;
@@ -40,6 +45,7 @@ function insertData() {
     let index = document.getElementById('inputIndex').value;
     let email = document.getElementById('inputEmail4').value;
     let password = document.getElementById('inputPassword4').value;
+    
     // Create form data to send
     let formData = new FormData();
     formData.append("signIn", "1");  // Simulate form submission
@@ -69,7 +75,7 @@ function insertData() {
 }
 
 function addCustomFormSubmit(){    
-    document.getElementById("registerform").addEventListener('submit', function(){
+    document.getElementById("registerForm").addEventListener('submit', function(event){        
         event.preventDefault();
         if (validation()){
             insertData();
